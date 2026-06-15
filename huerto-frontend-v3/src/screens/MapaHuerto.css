@@ -1,0 +1,61 @@
+.mapa-screen { display:flex;flex-direction:column;min-height:100%;background:var(--cream); }
+.mapa-body   { padding:14px;display:flex;flex-direction:column;gap:12px; }
+
+/* KPIs */
+.mapa-kpis { display:grid;grid-template-columns:repeat(4,1fr);gap:8px; }
+.mapa-kpi  { background:white;border-radius:var(--radius-sm);padding:10px 6px;text-align:center;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:2px; }
+.mapa-kpi.verde   { background:#d8f3dc; }
+.mapa-kpi.amarillo{ background:#fef3c7; }
+.mapa-kpi.gris    { background:#f8f5f0; }
+.kpi-num { font-size:20px;font-weight:900;color:var(--text-dark); }
+.kpi-lbl { font-size:9px;font-weight:700;color:var(--text-soft);text-transform:uppercase;letter-spacing:.4px; }
+
+/* Filtros */
+.mapa-filtros { display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none; }
+.mapa-filtros::-webkit-scrollbar{display:none}
+.filtro-btn { flex-shrink:0;padding:6px 12px;border-radius:20px;border:1.5px solid var(--green-light);background:white;font-family:'Nunito',sans-serif;font-size:11px;font-weight:700;color:var(--text-soft);cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:5px; }
+.filtro-btn.activo { background:var(--green-deep);border-color:var(--green-deep);color:white; }
+.filtro-count { background:rgba(0,0,0,.1);border-radius:10px;padding:1px 6px;font-size:10px; }
+.filtro-btn.activo .filtro-count { background:rgba(255,255,255,.2); }
+
+/* Mapa */
+.mapa-container { background:white;border-radius:var(--radius-md);padding:16px;box-shadow:var(--shadow-sm); }
+.mapa-instruccion { font-size:11px;color:var(--text-muted);font-weight:600;text-align:center;margin-bottom:12px; }
+.mapa-grilla { display:grid;gap:8px; }
+.celda-parcela {
+  border-radius:12px;border:2px solid;padding:8px 4px;
+  display:flex;flex-direction:column;align-items:center;gap:2px;
+  cursor:pointer;transition:all .18s;min-height:72px;justify-content:center;
+  user-select:none;
+}
+.celda-parcela:active { transform:scale(.93); }
+.celda-parcela.opaca { opacity:.25; }
+.celda-vacia { border-radius:12px;background:transparent;min-height:72px; }
+.celda-emoji  { font-size:18px;line-height:1; }
+.celda-codigo { font-size:11px;font-weight:900;color:var(--text-dark); }
+.celda-cultivo{ font-size:9px;font-weight:700;color:var(--text-soft);text-transform:uppercase;letter-spacing:.3px; }
+
+/* Leyenda */
+.mapa-leyenda { display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;padding-top:12px;border-top:1px solid var(--green-pale); }
+.leyenda-item { display:flex;align-items:center;gap:5px; }
+.leyenda-color { width:14px;height:14px;border-radius:4px;border:2px solid;flex-shrink:0; }
+.leyenda-label { font-size:10px;font-weight:700;color:var(--text-soft); }
+
+/* Tooltip */
+.mapa-tooltip { position:absolute;inset:0;background:rgba(0,0,0,.5);z-index:150;display:flex;align-items:flex-end;justify-content:center; }
+.tooltip-card { width:100%;background:white;border-radius:24px 24px 0 0;max-height:75%;overflow-y:auto;animation:slideUp .25s ease; }
+.tooltip-header { display:flex;justify-content:space-between;align-items:center;padding:16px 20px 12px;border-bottom:1px solid var(--green-pale); }
+.tooltip-codigo { font-size:17px;font-weight:900;color:var(--text-dark); }
+.tooltip-close  { background:none;border:none;font-size:20px;cursor:pointer;color:var(--text-muted); }
+.tooltip-body   { padding:14px 20px 28px;display:flex;flex-direction:column;gap:8px; }
+.tooltip-row    { display:flex;justify-content:space-between;align-items:center; }
+.tooltip-label  { font-size:12px;color:var(--text-muted);font-weight:600; }
+.tooltip-val    { font-size:12px;font-weight:800;color:var(--text-dark); }
+.tooltip-progreso { margin-top:4px; }
+.tooltip-divider { height:1px;background:var(--green-pale);margin:4px 0; }
+
+.estado-chip { display:inline-flex;align-items:center;gap:3px;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700; }
+.estado-cumplido   { background:#d8f3dc;color:#1a5c35; }
+.estado-pendiente  { background:#fef3c7;color:#92400e; }
+.estado-incumplido { background:#fee2e2;color:#991b1b; }
+.estado-sinturno   { background:#f0ece4;color:#6b7280; }

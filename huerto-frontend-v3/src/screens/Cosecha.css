@@ -1,0 +1,62 @@
+.cosecha-screen { display: flex; flex-direction: column; min-height: 100%; background: var(--cream); }
+
+.cosecha-body { padding: 16px; display: flex; flex-direction: column; gap: 16px; }
+
+.reporte-card {
+  background: white; border-radius: var(--radius-md); padding: 20px;
+  box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 6px;
+}
+.reporte-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--text-dark); }
+.reporte-sub { font-size: 12px; color: var(--text-soft); font-weight: 600; margin-bottom: 10px; line-height: 1.5; }
+
+.calidad-btns { display: flex; gap: 8px; }
+.calidad-btn {
+  flex: 1; padding: 10px 8px; border: 1.5px solid var(--green-light);
+  border-radius: var(--radius-sm); background: white; cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  font-family: 'Nunito', sans-serif; font-size: 11px; font-weight: 800;
+  color: var(--text-soft); transition: all 0.2s;
+}
+.calidad-btn span { font-size: 10px; }
+.calidad-btn.selected { border-color: var(--green-bright); background: var(--green-pale); color: var(--green-mid); }
+.calidad-btn:first-child { font-size: 18px; }
+
+/* Recientes */
+.recientes-section { display: flex; flex-direction: column; gap: 12px; }
+.recientes-header { display: flex; justify-content: space-between; align-items: center; }
+.ver-todas { background: none; border: none; color: var(--green-mid); font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 800; cursor: pointer; }
+
+.cosecha-destacada {
+  border-radius: var(--radius-md); overflow: hidden; position: relative;
+  height: 180px; background: var(--green-deep);
+  display: flex; align-items: flex-end;
+  box-shadow: var(--shadow-md);
+}
+.destacada-img {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-size: 100px; opacity: 0.3;
+}
+.destacada-overlay {
+  position: relative; z-index: 1; padding: 16px; width: 100%;
+  background: linear-gradient(to top, rgba(26,58,42,0.95), transparent);
+}
+.destacada-tags { display: flex; gap: 6px; margin-bottom: 8px; }
+.destacada-titulo { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 900; color: white; line-height: 1.2; }
+.destacada-autor { font-size: 11px; color: rgba(255,255,255,0.75); font-weight: 700; margin-top: 4px; }
+
+.cosechas-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.cosecha-mini {
+  background: white; border-radius: var(--radius-sm); overflow: hidden;
+  box-shadow: var(--shadow-sm); display: flex; flex-direction: column;
+}
+.mini-img {
+  height: 80px; display: flex; align-items: center; justify-content: center;
+  font-size: 40px;
+}
+.mini-img.carrot { background: #fff3e0; }
+.mini-img.zucch { background: #e8f5e9; }
+.mini-img.lettuce { background: #f1f8e9; }
+.mini-info { padding: 8px 10px; }
+.mini-kg { font-size: 16px; font-weight: 900; color: var(--text-dark); }
+.mini-sub { font-size: 11px; color: var(--text-soft); font-weight: 700; padding: 8px 10px; line-height: 1.3; }
+.cosecha-mini:first-child .mini-sub { padding: 0; }

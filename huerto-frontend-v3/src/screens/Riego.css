@@ -1,0 +1,148 @@
+.riego-screen {
+  display: flex; flex-direction: column;
+  min-height: 100%; background: var(--cream);
+}
+
+.riego-body {
+  padding: 16px;
+  display: flex; flex-direction: column; gap: 14px;
+}
+
+/* ── FECHA Y CLIMA ─────────────────────────────────────── */
+.riego-fecha-card {
+  background: white; border-radius: var(--radius-md);
+  padding: 16px; box-shadow: var(--shadow-sm);
+  display: flex; flex-direction: column; gap: 8px;
+}
+.fecha-txt { font-size: 15px; font-weight: 800; color: var(--text-dark); }
+.clima-row { display: flex; align-items: center; gap: 6px; }
+.clima-icon { font-size: 15px; }
+.clima-txt  { font-size: 12px; color: var(--text-soft); font-weight: 600; }
+
+/* ── MI TURNO ──────────────────────────────────────────── */
+.mi-turno-card {
+  background: white; border-radius: var(--radius-md);
+  padding: 18px; box-shadow: var(--shadow-sm);
+  display: flex; flex-direction: column; gap: 14px;
+  border-top: 4px solid var(--green-bright);
+}
+.mi-turno-header {
+  display: flex; justify-content: space-between; align-items: center;
+}
+.mi-turno-label {
+  font-size: 13px; font-weight: 800; color: var(--green-mid);
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.mi-turno-info {
+  display: flex; flex-direction: column; gap: 10px;
+}
+.mi-turno-parcela {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--green-pale); border-radius: var(--radius-sm); padding: 12px;
+}
+.parcela-icono { font-size: 24px; flex-shrink: 0; }
+.parcela-cod   { font-size: 15px; font-weight: 800; color: var(--text-dark); }
+.parcela-desc  { font-size: 12px; color: var(--text-soft); margin-top: 2px; }
+.mi-turno-hora {
+  background: #f8f5ef; border-radius: var(--radius-sm); padding: 10px 14px;
+}
+
+.btn-riego {
+  width: 100%; padding: 15px; border: none;
+  border-radius: var(--radius-sm);
+  background: var(--green-mid); color: white;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px; font-weight: 800;
+  cursor: pointer; transition: all 0.2s;
+  box-shadow: 0 4px 16px rgba(45,90,61,.25);
+}
+.btn-riego:hover:not(:disabled) { background: var(--green-dark); transform: translateY(-1px); }
+.btn-riego:active { transform: translateY(0); }
+.btn-riego.marcado {
+  background: #e8f5e9; color: var(--green-mid);
+  box-shadow: none; cursor: default;
+  border: 1.5px solid var(--green-light);
+}
+.btn-riego:disabled { opacity: 0.75; cursor: default; transform: none; }
+
+/* ── SIN TURNO ─────────────────────────────────────────── */
+.sin-turno-card {
+  background: white; border-radius: var(--radius-md);
+  padding: 18px; box-shadow: var(--shadow-sm);
+  display: flex; align-items: center; gap: 14px;
+  border: 1.5px dashed var(--green-light);
+}
+
+/* ── ESTADO HOY ────────────────────────────────────────── */
+.estado-hoy-card {
+  background: white; border-radius: var(--radius-md);
+  padding: 18px; box-shadow: var(--shadow-sm);
+}
+
+.resumen-chips {
+  display: flex; gap: 8px; margin-bottom: 14px;
+}
+.resumen-chip {
+  flex: 1; border-radius: var(--radius-sm); padding: 10px 6px;
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+}
+.resumen-chip.verde   { background: #d8f3dc; }
+.resumen-chip.amarillo{ background: #fef3c7; }
+.resumen-chip.rojo    { background: #fee2e2; }
+.chip-num { font-size: 20px; font-weight: 900; color: var(--text-dark); }
+.chip-lbl { font-size: 10px; font-weight: 700; color: var(--text-soft); text-transform: uppercase; letter-spacing: 0.4px; }
+
+/* ── LISTA DE VECINOS ──────────────────────────────────── */
+.vecino-turno-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--green-pale);
+}
+.vecino-turno-row:last-child { border-bottom: none; }
+.vecino-turno-row.mio {
+  background: var(--green-pale);
+  margin: 0 -18px; padding: 10px 18px;
+  border-radius: 8px; border-bottom: none;
+}
+.vt-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 800; color: white; flex-shrink: 0;
+}
+.vt-info  { flex: 1; min-width: 0; }
+.vt-nombre {
+  font-size: 13px; font-weight: 700; color: var(--text-dark);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.vt-yo    { font-size: 11px; font-weight: 600; color: var(--green-mid); }
+.vt-parcela { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+.vt-derecha { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; flex-shrink: 0; }
+.vt-hora  { font-size: 10px; font-weight: 700; color: var(--text-muted); }
+
+/* ── PRÓXIMOS ──────────────────────────────────────────── */
+.proximos-list { display: flex; flex-direction: column; gap: 8px; }
+.proximo-item {
+  background: white; border-radius: var(--radius-sm);
+  padding: 12px 14px; display: flex; align-items: center;
+  gap: 12px; box-shadow: var(--shadow-sm);
+}
+.proximo-mio {
+  border-left: 4px solid var(--green-bright);
+  background: var(--green-pale);
+}
+.proximo-fecha {
+  display: flex; flex-direction: column; align-items: center;
+  width: 32px; flex-shrink: 0;
+}
+.proximo-dia { font-size: 10px; font-weight: 900; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.proximo-num { font-size: 18px; font-weight: 900; color: var(--text-dark); line-height: 1; }
+.proximo-icon { font-size: 20px; flex-shrink: 0; }
+.proximo-info { flex: 1; }
+.proximo-desc { font-size: 13px; font-weight: 800; color: var(--text-dark); }
+.proximo-sub  { font-size: 11px; color: var(--text-soft); font-weight: 700; margin-top: 2px; }
+
+/* ── ESTADO CHIPS ──────────────────────────────────────── */
+.estado-chip { display:inline-flex;align-items:center;gap:3px;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700; }
+.estado-cumplido   { background:#d8f3dc;color:#1a5c35; }
+.estado-pendiente  { background:#fef3c7;color:#92400e; }
+.estado-incumplido { background:#fee2e2;color:#991b1b; }

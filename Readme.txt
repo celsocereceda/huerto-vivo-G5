@@ -1,4 +1,4 @@
-# 🌱 Huerto Vivo — Sistema de Gestión Comunitaria
+# Huerto Vivo — Sistema de Gestión Comunitaria
 
 ## Requisitos
 - Node.js 18+
